@@ -1,0 +1,4 @@
+set-executionpolicy unrestricted
+
+npm i nodemon
+npm i express
