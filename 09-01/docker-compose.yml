@@ -1,0 +1,8 @@
+version: "1.0"
+
+services:
+  node:
+    build: ./app
+    ports:
+      - "5000:3000"
+    container_name: "container"
