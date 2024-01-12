@@ -1,8 +1,7 @@
 # Node
  
 
-## 9 de Enero. 
-## !!! DESPLIEGUE !!!
+## 9 de Enero (Despliegue)
 
 > 1º VMWare con Debian.
 >> 2 discos duros para hacer RAID1.
@@ -30,8 +29,7 @@
 >> ``docker compose up -d`` -> Lo lanza sin mostrar el log.
 
 
-## 11 de Enero
-## ¡¡ SERVIDOR !!
+## 11 de Enero (Servidor)
 
  1. Módulo http -> Siempre ha estado incluido.
  2. Módulo express
