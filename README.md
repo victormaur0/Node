@@ -1,42 +1,39 @@
-# Node
- 
+# 9 de Enero (Despliegue)
 
-## 9 de Enero (Despliegue)
+VMWare con Debian.   
+&emsp;Usar 2 discos duros para hacer RAID1.   
+Instalar docker: ``apt-get install docker``      
+&emsp;&emsp;[Enlace pasos](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)   
+<br>
+> 1. Crear carpeta proyecto: "Docker"   
+> 2. Crear archivo "docker-compose.yml" -> nano docker-compose.yml   
+> 3. Crear directorio especificado en .yml -> "app" -> mkdir app   
+> 4. Crear archivo dockerfile -> nano dockerfile   
+> 5. Crear carpeta para guardar las dependencias de node y ficheros js.   
 
-> 1º VMWare con Debian.
->> 2 discos duros para hacer RAID1.
-> 2º Instalar docker: ``apt-get install docker``
->> https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+> Estructura de la carpeta del proyecto.
+>-> Docker [ ]   
+>&emsp;&emsp;-> docker-compose.yml   
+>&emsp;&emsp;-> app [ ]   
+>&emsp;&emsp;&emsp;&emsp;-> Dockerfile   
+>&emsp;&emsp;&emsp;&emsp;-> server [ ]   
+>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-> server.js   
+>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-> package.json   
+> [ ] = Carpeta.
 
-> Crear carpeta proyecto: "Docker"
-> Crear archivo "docker-compose.yml" -> nano docker-compose.yml
-> Crear directorio especificado en .yml -> "app" -> mkdir app
-> Crear archivo dockerfile -> nano dockerfile
-> crear carpeta para guardar las dependencias de node y ficheros js.
->> server.js y package.json.
+> ``docker compose up`` -> Lo lanza y muestra log de todo lo que hace.   
+> ``docker compose up --build`` -> Borra el anterior build y lo vuelve a lanzar   
+> ``docker compose up -d`` -> Lo lanza sin mostrar el log.   
 
-
--> Docker []
-    -> docker-compose.yml
-    -> app []
-        -> Dockerfile
-        -> server []
-            -> server.js
-            -> package.json
-
-> ``docker compose up`` -> Lo lanza y muestra log de todo lo que hace.
->> ``docker compose up --build`` -> Borra el anterior build y lo vuelve a lanzar
->> ``docker compose up -d`` -> Lo lanza sin mostrar el log.
-
-
-## 11 de Enero (Servidor)
+<br><br><br>
+# 11 de Enero (Servidor)
 
  1. Módulo http -> Siempre ha estado incluido.
  2. Módulo express
  3. HBS
 <br><br>
-### http
------
+## http
+> ``const http = require("http")``<br>
 > http.createServer((req, res) => {}); <br>
 > req -> lo que se recibe (parametros url, datos formulario, datos del fetch, ajax) <br>
 > res -> lo que devuelves al navegador. <br>
@@ -50,16 +47,15 @@
 > Para que pinte las etiquetas: <br>
 > ``res.writeHead(200, {"Content-Type": "text/html"});`` <br><br>
 
-### express (server-express.js)
------
+## express (server-express.js)
 > ``npm install express`` <br>
+> ``const express = require("express")``<br>
 > No hace falta poner la cabecera porque express entiende que va a ser html. <br>
 > ``app.get("/", (req, res) => {`` <br>
 > ``    res.send("<h1>Hola Mundo!</h1>");`` <br>
 > ``})`` <br><br>
 
-### Redirecciones de ruta: (server-express2.js)
------
+## Redirecciones de ruta: (server-express2.js)
 > ``const path = require("path")`` <br>
 > ``res.sendFile(path.join(__dirname, "./vistas/index.html"));`` <br>
 > Enviamos el archivo html. __dirname coge la ruta del proyecto, y le concatena el archivo que queremos enviar. <br>
@@ -75,8 +71,7 @@
 > ``    res.sendFile(path.join(__dirname, "./vistas/error404.html"));`` <br>
 > ``})`` <br><br>
 
-### Unificar el proceso para que cargue la carpeta directamente sin tener que poner una a una. (server-express3.js)
------
+## Unificar el proceso para que cargue la carpeta directamente sin tener que poner una a una. (server-express3.js)
 > ``app.use(express.static(path.join(__dirname, "./vistas")))`` -> ruta: localhost/archivo.html <br>
 > Ejemplo <br>
 > ``app.use(express.static(path.join(__dirname, "./vistas")))`` <br>
@@ -84,9 +79,8 @@
 > ``    res.status(404).sendFile(path.join(__dirname, "./404.html"));`` <br>
 > ``})`` <br><br>
 
-### hbs (server-hbs.js)
------
-> Plugin (aasociado a express) para estructurar el proyecto como mvc. <br>
+## hbs (server-hbs.js)
+Plugin (aasociado a express) para estructurar el proyecto como mvc. <br>
 > ``npm install hbs`` <br>
 > ``const hbs = require("hbs")`` <br>
 > Renombrar los .html a .hbs <br>
@@ -114,4 +108,4 @@
 > ``{{> navbar}}`` <br><br>
 
 
->> Ejecutar servidor: ``node server.js``
+> Ejecutar servidor: ``node server.js``
