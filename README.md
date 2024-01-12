@@ -37,7 +37,7 @@
  2. Módulo express
  3. HBS
 <br><br>
-### http <br>
+### http
 -----
 > http.createServer((req, res) => {}); <br>
 > req -> lo que se recibe (parametros url, datos formulario, datos del fetch, ajax) <br>
@@ -52,7 +52,7 @@
 > Para que pinte las etiquetas: <br>
 > ``res.writeHead(200, {"Content-Type": "text/html"});`` <br><br>
 
-### express (server-express.js) <br>
+### express (server-express.js)
 -----
 > ``npm install express`` <br>
 > No hace falta poner la cabecera porque express entiende que va a ser html. <br>
@@ -60,7 +60,7 @@
 > ``    res.send("<h1>Hola Mundo!</h1>");`` <br>
 > ``})`` <br><br>
 
-### Redirecciones de ruta: (server-express2.js) <br>
+### Redirecciones de ruta: (server-express2.js)
 -----
 > ``const path = require("path")`` <br>
 > ``res.sendFile(path.join(__dirname, "./vistas/index.html"));`` <br>
@@ -77,7 +77,7 @@
 > ``    res.sendFile(path.join(__dirname, "./vistas/error404.html"));`` <br>
 > ``})`` <br><br>
 
-### Unificar el proceso para que cargue la carpeta directamente sin tener que poner una a una. (server-express3.js) <br>
+### Unificar el proceso para que cargue la carpeta directamente sin tener que poner una a una. (server-express3.js)
 -----
 > ``app.use(express.static(path.join(__dirname, "./vistas")))`` -> ruta: localhost/archivo.html <br>
 > Ejemplo <br>
@@ -86,7 +86,7 @@
 > ``    res.status(404).sendFile(path.join(__dirname, "./404.html"));`` <br>
 > ``})`` <br><br>
 
-### hbs (server-hbs.js) <br>
+### hbs (server-hbs.js)
 -----
 > Plugin (aasociado a express) para estructurar el proyecto como mvc. <br>
 > ``npm install hbs`` <br>
