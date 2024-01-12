@@ -38,6 +38,7 @@
  3. HBS
 <br><br>
 ### http <br>
+-----
 > http.createServer((req, res) => {}); <br>
 > req -> lo que se recibe (parametros url, datos formulario, datos del fetch, ajax) <br>
 > res -> lo que devuelves al navegador. <br>
@@ -49,16 +50,18 @@
 > Se pueden sustituir el write y end en solo un paso: <br>
 > ``res.end("<h1>Hola Mundo!</h1>");`` <br>
 > Para que pinte las etiquetas: <br>
-> ``res.writeHead(200, {"Content-Type": "text/html"});`` <br>
+> ``res.writeHead(200, {"Content-Type": "text/html"});`` <br><br>
 
 ### express (server-express.js) <br>
+-----
 > ``npm install express`` <br>
 > No hace falta poner la cabecera porque express entiende que va a ser html. <br>
 > ``app.get("/", (req, res) => {`` <br>
 > ``    res.send("<h1>Hola Mundo!</h1>");`` <br>
-> ``})`` <br>
+> ``})`` <br><br>
 
 ### Redirecciones de ruta: (server-express2.js) <br>
+-----
 > ``const path = require("path")`` <br>
 > ``res.sendFile(path.join(__dirname, "./vistas/index.html"));`` <br>
 > Enviamos el archivo html. __dirname coge la ruta del proyecto, y le concatena el archivo que queremos enviar. <br>
@@ -72,17 +75,19 @@
 > Pagina 404 -> se pone al final siempre. <br>
 > ``app.get("*", (req, res) => {`` <br>
 > ``    res.sendFile(path.join(__dirname, "./vistas/error404.html"));`` <br>
-> ``})`` <br>
+> ``})`` <br><br>
 
 ### Unificar el proceso para que cargue la carpeta directamente sin tener que poner una a una. (server-express3.js) <br>
+-----
 > ``app.use(express.static(path.join(__dirname, "./vistas")))`` -> ruta: localhost/archivo.html <br>
 > Ejemplo <br>
 > ``app.use(express.static(path.join(__dirname, "./vistas")))`` <br>
 > ``app.get("*", (req, res) => {`` <br>
 > ``    res.status(404).sendFile(path.join(__dirname, "./404.html"));`` <br>
-> ``})`` <br>
+> ``})`` <br><br>
 
 ### hbs (server-hbs.js) <br>
+-----
 > Plugin (aasociado a express) para estructurar el proyecto como mvc. <br>
 > ``npm install hbs`` <br>
 > ``const hbs = require("hbs")`` <br>
@@ -108,7 +113,7 @@
 > ``    <li>4</li>`` <br>
 > ``</ul>`` <br>
 > En el fichero que se quiere incluir usamos: <br>
-> ``{{> navbar}}`` <br>
+> ``{{> navbar}}`` <br><br>
 
 
 >> Ejecutar servidor: ``node server.js``
