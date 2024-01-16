@@ -109,3 +109,75 @@ Plugin (aasociado a express) para estructurar el proyecto como mvc. <br>
 
 
 > Ejecutar servidor: ``node server.js``
+
+# 16 de Enero (Servidor)
+Conexion a base de datos de Mongodb
+
+1. Mongodb
+2. Mongoose
+   
+      
+## Módulo mongodb   
+> `npm i mongodb`   
+> localhost no sirve, usar 127.0.0.1   
+> En la url podemos incluir usuario y contraseña -> Ver README.md de repositorio Mongo   
+   
+La funcion main es la que ejecuta la conexion y todas las funciones que se requieran.   
+Hay que controlar los errores con el `.catch(console.error)`   
+   
+El main siempre tiene un try con catch y finally.   
+> 1. Catch: imprime por consola los errores.   
+> 2. Finally: siempre cierra la conexión al final de la ejecución haya habido errores o no.   
+   
+Todas las funciones de insertar, consultas, etc, deben ser asincronas, para que mientras se realiza la operación no se ejecute el cierre de la conexión.   
+   
+> Cada vez que insertamos, lo almacenamos en una variable para poder imprimir el id del objeto insertado.   
+   
+   
+## Módulo mongoose
+Se define una estructura que van a tener los datos, para que al insertarlos/recogerlos/etc, lo cumplan, y si no lo cumplen, no funcione. Se definen cuántos y cuáles.   
+> `npm i mongoose`   
+
+Modelos
+> `new mongoose.Schema({});` -> Se pasa siempre un json indicando los campos y el tipo.   
+> Para que un campo sea obligatorio:
+> `color: {type: String, required: true}`
+> Para que no se muestre en los select:
+> `color: {type: String, select: false}`
+> Valor por defecto:
+> `color: {type: String, default: "verde"}`
+> Primary key:
+> `color: {type: String, unique: true}`
+> Validacion:
+> `color: {type: String, validator: x => {return /REGEX EXP/.text(x)}, message: m => m+" no es un valor correcto."}`
+> Tipos permitidos:   
+>    
+> 1. String   
+> 2. Number   
+> 3. Date   
+> 4. Buffer   
+> 5. Boolean   
+> 6. Mixed   
+> 7. ObjectId   
+> 8. Array   
+> 9. Decimal128   
+> 10. Map   
+> 11. UUID   
+>   
+> El String del modelo indica el nombre de la coleccion.   
+> En la bbdd de Mongo el nombre de la colecciond debe estar en minusculas.
+> En el .js el nombre en el modelo da igual si va en mayusculas o minusculas, internamente hace un `lowercase`.
+
+`mongoose.connection.on`: para cuando se conecta a la base de datos. Primer parámetro:
+> &nbsp;&nbsp;- `connected`: cuando se conecta bien.   
+> &nbsp;&nbsp;- `error`: cuando falla la conexion.
+
+Find
+> Sobre el modelo, hacemos el find, y con el then imprimimos lo que devuelve.
+> Parametros:
+> 1. {} -> Busca todo
+> 2. {} -> Busca lo que tenga luz.
+
+Insertar
+> 1. Creamos un objeto de clase del modelo, y como parametros pasamos un json con los valores.
+> 2. Almacenamos en una variable el resultado de la funcion asincrona save() sobre el objeto.
