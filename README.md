@@ -137,18 +137,18 @@ Todas las funciones de insertar, consultas, etc, deben ser asincronas, para que 
 Se define una estructura que van a tener los datos, para que al insertarlos/recogerlos/etc, lo cumplan, y si no lo cumplen, no funcione. Se definen cuántos y cuáles.   
 > `npm i mongoose`   
 
-Modelos
+Modelos   
 `new mongoose.Schema({});` -> Se pasa siempre un json indicando los campos y el tipo.   
  Para que un campo sea obligatorio:      
-`color: {type: String, required: true}`   
+&nbsp;&nbsp;`color: {type: String, required: true}`   
 Para que no se muestre en los select:   
-`color: {type: String, select: false}`   
+&nbsp;&nbsp;`color: {type: String, select: false}`   
 Valor por defecto:   
-`color: {type: String, default: "verde"}`   
+&nbsp;&nbsp;`color: {type: String, default: "verde"}`   
 Primary key:   
-`color: {type: String, unique: true}`   
+&nbsp;&nbsp;`color: {type: String, unique: true}`   
 Validacion:   
-`color: {type: String, validator: x => {return /REGEX EXP/.text(x)}, message: m => m+" no es un valor correcto."}`   
+&nbsp;&nbsp;`color: {type: String, validator: x => {return /REGEX EXP/.text(x)}, message: m => m+" no es un valor correcto."}`   
 Tipos permitidos:      
    
 > 1. String   
