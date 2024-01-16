@@ -140,15 +140,15 @@ Se define una estructura que van a tener los datos, para que al insertarlos/reco
 Modelos   
 `new mongoose.Schema({});` -> Se pasa siempre un json indicando los campos y el tipo.   
  Para que un campo sea obligatorio:      
-&nbsp;&nbsp;`color: {type: String, required: true}`   
+&nbsp;&nbsp;&nbsp;&nbsp;`color: {type: String, required: true}`   
 Para que no se muestre en los select:   
-&nbsp;&nbsp;`color: {type: String, select: false}`   
+&nbsp;&nbsp;&nbsp;&nbsp;`color: {type: String, select: false}`   
 Valor por defecto:   
-&nbsp;&nbsp;`color: {type: String, default: "verde"}`   
+&nbsp;&nbsp;&nbsp;&nbsp;`color: {type: String, default: "verde"}`   
 Primary key:   
-&nbsp;&nbsp;`color: {type: String, unique: true}`   
+&nbsp;&nbsp;&nbsp;&nbsp;`color: {type: String, unique: true}`   
 Validacion:   
-&nbsp;&nbsp;`color: {type: String, validator: x => {return /REGEX EXP/.text(x)}, message: m => m+" no es un valor correcto."}`   
+&nbsp;&nbsp;&nbsp;&nbsp;`color: {type: String, validator: x => {return /REGEX EXP/.text(x)}, message: m => m+" no es un valor correcto."}`   
 Tipos permitidos:      
    
 > 1. String   
