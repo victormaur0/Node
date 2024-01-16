@@ -115,7 +115,6 @@ Conexion a base de datos de Mongodb
 
 1. Mongodb
 2. Mongoose
-   
       
 ## Módulo mongodb   
 > `npm i mongodb`   
@@ -140,17 +139,17 @@ Se define una estructura que van a tener los datos, para que al insertarlos/reco
 
 Modelos
 > `new mongoose.Schema({});` -> Se pasa siempre un json indicando los campos y el tipo.   
-> Para que un campo sea obligatorio:
-> `color: {type: String, required: true}`
-> Para que no se muestre en los select:
-> `color: {type: String, select: false}`
-> Valor por defecto:
-> `color: {type: String, default: "verde"}`
-> Primary key:
-> `color: {type: String, unique: true}`
-> Validacion:
-> `color: {type: String, validator: x => {return /REGEX EXP/.text(x)}, message: m => m+" no es un valor correcto."}`
-> Tipos permitidos:   
+> Para que un campo sea obligatorio:      
+> `color: {type: String, required: true}`   
+> Para que no se muestre en los select:   
+> `color: {type: String, select: false}`   
+> Valor por defecto:   
+> `color: {type: String, default: "verde"}`   
+> Primary key:   
+> `color: {type: String, unique: true}`   
+> Validacion:   
+> `color: {type: String, validator: x => {return /REGEX EXP/.text(x)}, message: m => m+" no es un valor correcto."}`   
+> Tipos permitidos:      
 >    
 > 1. String   
 > 2. Number   
