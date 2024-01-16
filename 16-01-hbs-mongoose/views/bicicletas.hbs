@@ -6,6 +6,17 @@
     <title>Bicicletas</title>
 </head>
 <body>
-    {{uno.marchas}}
+    <div style="display: grid; grid-template-columns:repeat(4, 25%);">
+        {{#each lista}}
+            <div>
+                <p><b>ID</b>&nbsp;&nbsp;&nbsp;{{this._id}}</p>
+                <p><b>Marchas</b>&nbsp;&nbsp;&nbsp;{{this.marchas}}</p>
+                <p><b>Platos</b>&nbsp;&nbsp;&nbsp;{{this.platos}}</p>
+                <p><b>Color</b>&nbsp;&nbsp;&nbsp;{{this.color}}</p>
+                <p><b>Bocina</b>&nbsp;&nbsp;&nbsp;{{this.bocina}}</p>
+                <p><b>Cesta</b>&nbsp;&nbsp;&nbsp;{{this.cesta}}</p>
+            </div>
+        {{/each}}
+    </div>
 </body>
 </html>

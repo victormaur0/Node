@@ -6,6 +6,18 @@
     <title>Patinetes</title>
 </head>
 <body>
-    
+    <div style="display: grid; grid-template-columns:repeat(4, 25%);">
+        {{#each lista}}
+            <div>
+                <p><b>ID</b>&nbsp;&nbsp;&nbsp;{{this._id}}</p>
+                <p><b>Potencia</b>&nbsp;&nbsp;&nbsp;{{this.potencia}}</p>
+                <p><b>Ruedas</b>&nbsp;&nbsp;&nbsp;{{this.ruedas}}</p>
+                <p><b>Color</b>&nbsp;&nbsp;&nbsp;{{this.color}}</p>
+                <p><b>Marca</b>&nbsp;&nbsp;&nbsp;{{this.marca}}</p>
+                <p><b>Luz</b>&nbsp;&nbsp;&nbsp;{{this.extras.luz}}</p>
+                <p><b>Amortiguaci&oacute;n</b>&nbsp;&nbsp;&nbsp;{{this.extras.amortiguacion}}</p>
+            </div>
+        {{/each}}
+    </div>
 </body>
 </html>

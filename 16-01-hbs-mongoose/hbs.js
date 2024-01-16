@@ -12,17 +12,24 @@ app.get("/", (req, res) => {
     res.render("index");
 })
 app.get("/bicis", (req, res) => {
-    let t = {};
     mongoose.connect(url);
     mongoose.connection.on("connected", async () => {
         await Bicicletas.find({})
-        .then(docs => {t = (docs); console.log(t)});
+        .then(docs => {
+            res.render("bicicletas", {lista: docs});
+            mongoose.connection.close();
+        });
     });
-    console.log(typeof(t) + t);
-    res.render("bicicletas", {uno: t[0], dos: t[1]});
 })
 app.get("/patinetes", (req, res) => {
-    res.render("patinetes");
+    mongoose.connect(url);
+    mongoose.connection.on("connected", async () => {
+        await Patinetes.find({})
+        .then(docs => {
+            res.render("patinetes", {lista: docs});
+            mongoose.connection.close();
+        });
+    });
 })
 app.get("*", (req, res) => {
     res.status(404).sendFile(path.join(__dirname, "./views/404.html"));
