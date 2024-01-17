@@ -1,33 +1,53 @@
 import './App.css'
-import { useEffect, useState } from 'react';
+import { useState } from 'react'
+
 
 function App() {
 
-  const [contenido, cambioContenido] = useState<any[]>([]);
+  const [content1, cambioContent1] = useState("");
 
-  useEffect(() => {
+  function mostrar1() {
     fetch("http://localhost:3000/producto")
       .then(datos => datos.json())
-      .then(res => cambioContenido(res));
-  }, [])
-
-
-  if (contenido.length != 0) {
-    return (
-      contenido.map(clase => (
+      .then(res => {
+        cambioContent1(res.map((clase:any) => (
           <div>
             La clase de {clase.curso}º de {clase.ciclo} es {clase.clase}, situada en la {clase.planta}ª planta y hay {clase.alumnos} alumnos
           </div>
-        ))
-    )
+        )));
+      });
+
+
+
+  }
+
+  function mostrar2() {
+    fetch("http://localhost:3000/alumnos")
+      .then(datos => datos.json())
+      .then(res => {
+        cambioContent1(res.map((persona: any) => (
+          <div>
+            Nombre: {persona.nombre}, apellidos: {persona.apellidos}, edad: {persona.edad}, codigo postal: {persona.cp}, telefono: {persona.telefono}
+          </div>
+        )));
+      });
   }
 
   return (
     <>
-      <p>Cargando ...</p>
+      <button onClick={() => {
+        mostrar1();
+      }}>Boton 1</button>
+      <button onClick={() => {
+        mostrar2();
+      }}>Boton 2</button>
+      
+      <p>{content1}</p>
     </>
   )
+
 }
+
 
 export default App
 
