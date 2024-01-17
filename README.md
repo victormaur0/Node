@@ -180,3 +180,20 @@ Find
 Insertar
 > 1. Creamos un objeto de clase del modelo, y como parametros pasamos un json con los valores.
 > 2. Almacenamos en una variable el resultado de la funcion asincrona save() sobre el objeto.
+
+
+
+# 17 de Enero
+`res.json(datos)` -> muestra en el navegador un fichero de json.   
+## Node (express + json) + React
+1. En la carpeta api creamos proyecto de react -> `npm create vite`   
+2. useEffect -> si tienes que cargar datos de la bbdd de datos se tarda 2seg. Sirve para que pinte la pagina mientras se cargan los datos.   
+3. useState -> para que cuando almacenemos los datos que queremos pintar, actualice la vista.   
+4. Ruta del fetch: `http://localhost/producto`.   
+5. Si error de acceso: en carpeta del servidor de node -> `npm i cors`   
+6. Añadir al fichero server.js -> `const cors = require("cors")` + `app.use(cors())` 
+
+CORS: te permite hacer peticiones a tu servidor desde otros dominios.
+
+7. Para definir tipo array con useState -> `useState<any[]>([])` -> así no saldrá error al acceder a los parametros del json.
+8. Usamos `.map` para recorrer un array y que pinte lo mismo para todos los json.
