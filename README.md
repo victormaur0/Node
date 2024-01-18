@@ -197,3 +197,16 @@ CORS: te permite hacer peticiones a tu servidor desde otros dominios.
 
 7. Para definir tipo array con useState -> `useState<any[]>([])` -> así no saldrá error al acceder a los parametros del json.
 8. Usamos `.map` para recorrer un array y que pinte lo mismo para todos los json.
+
+# 18 de Enero
+Metodos de express para rutas.
+
+1. POST: informacion en las cabeceras del mensaje
+2. GET: informacion por url.
+3. PUT: actualizar completamente
+4. DELETE: borrar
+5. PATCH: actualizar parcialmente
+6. HEAD: recupera encabezados, no datos.
+7. OPTIONS: opciones de comunicación (Ej.: comprobar cors)
+8. CONNECT: tunel hacia el servidor.
+9. TRACE: prueba de retorno con fines diagnósticos.
