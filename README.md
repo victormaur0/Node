@@ -183,7 +183,7 @@ Insertar
 
 
 
-# 17 de Enero
+# 17 de Enero (Servidor + cliente)
 `res.json(datos)` -> muestra en el navegador un fichero de json.   
 ## Node (express + json) + React
 1. En la carpeta api creamos proyecto de react -> `npm create vite`   
@@ -198,7 +198,7 @@ CORS: te permite hacer peticiones a tu servidor desde otros dominios.
 7. Para definir tipo array con useState -> `useState<any[]>([])` -> así no saldrá error al acceder a los parametros del json.
 8. Usamos `.map` para recorrer un array y que pinte lo mismo para todos los json.
 
-# 18 de Enero
+# 18 de Enero (Servidor)
 Metodos de express para rutas.
 
 1. POST: informacion en las cabeceras del mensaje
