@@ -210,3 +210,5 @@ Metodos de express para rutas.
 7. OPTIONS: opciones de comunicación (Ej.: comprobar cors)
 8. CONNECT: tunel hacia el servidor.
 9. TRACE: prueba de retorno con fines diagnósticos.
+
+Ejemplo: `app.delete("/", () => {})`   
