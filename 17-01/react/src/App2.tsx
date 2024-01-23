@@ -15,9 +15,9 @@ function App() {
   if (contenido.length != 0) {
     return (
       contenido.map(clase => (
-          <div>
+          <>
             La clase de {clase.curso}º de {clase.ciclo} es {clase.clase}, situada en la {clase.planta}ª planta y hay {clase.alumnos} alumnos
-          </div>
+          </>
         ))
     )
   }

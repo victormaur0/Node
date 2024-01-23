@@ -196,7 +196,12 @@ Insertar
 CORS: te permite hacer peticiones a tu servidor desde otros dominios.
 
 7. Para definir tipo array con useState -> `useState<any[]>([])` -> así no saldrá error al acceder a los parametros del json.
-8. Usamos `.map` para recorrer un array y que pinte lo mismo para todos los json.
+8. Usamos `.map` para recorrer un array y que pinte lo mismo para todos los json.   
+   
+9. Para lanzarlo:
+> `npm run dev` : sobre la carpeta que contiene react
+> `node server.js`: sobre la carpeta que contiene el javascript de node.
+
 
 # 18 de Enero (Servidor)
 Metodos de express para rutas.
@@ -212,3 +217,19 @@ Metodos de express para rutas.
 9. TRACE: prueba de retorno con fines diagnósticos.
 
 Ejemplo: `app.delete("/", () => {})`   
+
+# 23 de Enero (Servidor)
+Conectar react, con node y con mongo.
+1. > `npm i express`   
+    > `npm i cors`   
+2. Creamos proyecto de react y copiamos el App.tsx del dia 17 de enero.   
+3. Al hacer el fetch, le metemos un json como segundo parametro. En el, indicamos que `method` queremos usar.   
+4. Para cuando hacemos un delete, put, etc, (ni get ni post), tenemos que pasarle mas cosas en el json.   
+> `{method: "DELETE", headers: {"Content-Type": "application/json"}, body: JSON.stringify({id: 1,descripcion: "Camiseta cutre"})}`: Hay que indicar la cabecera, para poder pasarle un json en el body.   
+5. En el App.tsx, para recoger ese id o descripcion, se utiliza `req.body.id` o `req.body.descripcion`   
+6. Lo ideal en DELETE, PUT o PATCH, es llamar a una funcion que se conecte a la base de datos, y si hace lo que quequeremos, devuelva un `res.json`.   
+> `res.json({ok: true, status: 200, mensaje: "Se ha borrado el produco con id: ${req.body.id}"})`.   
+7. Para conectar mongo, debemos crear cada funcion que queremos hacer y por parametro le pasamos o lo que se inserta o lo que se busca.   
+Dentro de cada funcion se debe hacer la conexion a la base de datos y cerrarla, ademas de devolver los posibles errores que hayan ocurrido.   
+Cada función deberá importarse en el server.js para poder llamarla desde cada metodo.
+8. Para que useEffect de React no se ejecute 2 veces, en main.tsx, eliminamos `<React.StrictMode>`.

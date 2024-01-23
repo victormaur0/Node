@@ -42,7 +42,7 @@ function App() {
         mostrar2();
       }}>Boton 2</button>
       
-      <p>{content1}</p>
+      {content1}
     </>
   )
 
