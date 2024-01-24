@@ -232,4 +232,7 @@ Conectar react, con node y con mongo.
 7. Para conectar mongo, debemos crear cada funcion que queremos hacer y por parametro le pasamos o lo que se inserta o lo que se busca.   
 Dentro de cada funcion se debe hacer la conexion a la base de datos y cerrarla, ademas de devolver los posibles errores que hayan ocurrido.   
 Cada función deberá importarse en el server.js para poder llamarla desde cada metodo.
-8. Para que useEffect de React no se ejecute 2 veces, en main.tsx, eliminamos `<React.StrictMode>`.
+8. Para que useEffect de React no se ejecute 2 veces, en main.tsx, eliminamos `<React.StrictMode>`.   
+
+# 24 de Enero (Servidor + Cliente)
+Continuación del dia 23 de enero -> Programar el resto de metodos e implementarlo con botones.

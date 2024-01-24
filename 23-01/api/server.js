@@ -16,7 +16,6 @@ app.patch("/", (req, res) => {
     res.send("<h1>Ver productos con PATCH</h1>");
 })
 app.put("/", (req, res) => {
-    console.log("Entramos en PUT: " + req.originalUrl);
     insertar(req.body)
         .then (e => {
             //console.log("RES: " + e);
