@@ -190,8 +190,9 @@ Insertar
 2. useEffect -> si tienes que cargar datos de la bbdd de datos se tarda 2seg. Sirve para que pinte la pagina mientras se cargan los datos.   
 3. useState -> para que cuando almacenemos los datos que queremos pintar, actualice la vista.   
 4. Ruta del fetch: `http://localhost/producto`.   
-5. Si error de acceso: en carpeta del servidor de node -> `npm i cors`   
-6. Añadir al fichero server.js -> `const cors = require("cors")` + `app.use(cors())` 
+5. Si error de acceso: en carpeta del servidor de node -> `npm i cors`
+6. CORS: Cross-Origin Resource Sharing -> habilitado por defecto para cuando se hace una peticion que está fuera de tu mismo dominio.
+7. Añadir al fichero server.js -> `const cors = require("cors")` + `app.use(cors())` 
 
 CORS: te permite hacer peticiones a tu servidor desde otros dominios.
 
