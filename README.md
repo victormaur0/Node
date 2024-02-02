@@ -192,7 +192,8 @@ Insertar
 4. Ruta del fetch: `http://localhost/producto`.   
 5. Si error de acceso: en carpeta del servidor de node -> `npm i cors`
 6. CORS: Cross-Origin Resource Sharing -> habilitado por defecto para cuando se hace una peticion que está fuera de tu mismo dominio.
-7. Añadir al fichero server.js -> `const cors = require("cors")` + `app.use(cors())` 
+7. Añadir al fichero server.js -> `const cors = require("cors")` + `app.use(cors())`
+8. `app.use(express.json))` -> Para que al recibir informacion (de cliente a servidor) la interprete como json.   
 
 CORS: te permite hacer peticiones a tu servidor desde otros dominios.
 
