@@ -235,4 +235,7 @@ Cada función deberá importarse en el server.js para poder llamarla desde cada 
 8. Para que useEffect de React no se ejecute 2 veces, en main.tsx, eliminamos `<React.StrictMode>`.   
 
 # 24 de Enero (Servidor + Cliente)
-Continuación del dia 23 de enero -> Programar el resto de metodos e implementarlo con botones.
+Continuación del dia 23 de enero -> Programar el resto de metodos e implementarlo con botones.   
+   
+# 7 de Febrero (Cliente)
+JWT -> repositorio.
